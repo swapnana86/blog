@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-yp3ag3v0k25br9%87n45l+2)nmw)jt+v%wi)goh+p)b*7_q3+u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,6 +123,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     str(BASE_DIR.joinpath('static'))
 ]  # new
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))  # new
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'  # new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -130,7 +132,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home' # new
+LOGOUT_REDIRECT_URL = 'home'  # new
 
 LOGGING = {
     'version': 1,
