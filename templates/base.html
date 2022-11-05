@@ -11,10 +11,13 @@ eet">
 <header>
 <div class="nav-left">
 <h1><a href="{% url 'home' %}">Django blog</a></h1>
+    
 </div>
 {% if user.is_authenticated %}
     <div class="nav-right">
         <a href="{% url 'post_new' %}">+ New Blog Post</a>
+{% else%}
+        <a href="{% url 'signup' %}">SignUp</a>
     </div>
 {% endif %}
 </header>
